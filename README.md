@@ -1,0 +1,1 @@
+# Waterfox-VisualStudio-Purple-DarkTheme
