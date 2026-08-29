@@ -1,0 +1,595 @@
+/* ============================================================
+   WATERFOX — VISUAL STUDIO DARK
+   Reference-style: black + graphite + layered purple
+   ============================================================ */
+:root {
+    /* BASE */
+    --bg-root: #050507;
+    --bg-toolbar: #09090d;
+    --bg-toolbar-2: #0c0c12;
+
+    --bg-panel: #111117;
+    --bg-panel-2: #17171f;
+    --bg-hover: #20202a;
+
+    --bg-input: #27272f;
+    --bg-input-hover: #2d2d37;
+    --bg-input-focus: #1d1d25;
+
+    /* PURPLE */
+    --purple-bright: #9b6cff;
+    --purple-main: #8653e6;
+    --purple-mid: #6840b7;
+    --purple-dark: #3d246d;
+
+    --purple-08: rgba(155, 108, 255, 0.08);
+    --purple-12: rgba(155, 108, 255, 0.12);
+    --purple-18: rgba(155, 108, 255, 0.18);
+    --purple-28: rgba(155, 108, 255, 0.28);
+    --purple-45: rgba(155, 108, 255, 0.45);
+
+    /* TEXT */
+    --text-main: #f1eff6;
+    --text-secondary: #b5b1bd;
+    --text-muted: #7f7a88;
+
+    /* FIREFOX / WATERFOX VARIABLES */
+    --toolbar-bgcolor: var(--bg-toolbar) !important;
+    --toolbar-color: var(--text-main) !important;
+
+    --lwt-accent-color: var(--bg-root) !important;
+    --lwt-text-color: var(--text-main) !important;
+
+    --tabpanel-background-color: var(--bg-root) !important;
+
+    --sidebar-background-color: var(--bg-panel) !important;
+    --sidebar-text-color: var(--text-main) !important;
+
+    --chrome-content-separator-color: var(--purple-dark) !important;
+}
+
+/* ============================================================
+   MAIN WINDOW
+   ============================================================ */
+#main-window {
+    background: var(--bg-root) !important;
+    color: var(--text-main) !important;
+}
+
+/* ============================================================
+   TOP AREA
+   ============================================================ */
+#navigator-toolbox,
+#titlebar {
+    background: var(--bg-toolbar) !important;
+    background-image: none !important;
+
+    color: var(--text-main) !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+}
+
+#navigator-toolbox {
+    border-bottom:
+        1px solid var(--purple-dark) !important;
+}
+
+/* ============================================================
+   NAV BAR
+   ============================================================ */
+#nav-bar {
+    min-height: 38px !important;
+    max-height: 38px !important;
+
+    padding: 2px 8px !important;
+
+    background: var(--bg-toolbar) !important;
+    background-image: none !important;
+
+    border: none !important;
+}
+
+
+/* ============================================================
+   NAVIGATION BUTTONS
+   ============================================================ */
+#nav-bar toolbarbutton {
+    padding: 5px !important;
+
+    color: #c9c4d2 !important;
+
+    background: transparent !important;
+
+    border: 1px solid transparent !important;
+    border-radius: 7px !important;
+}
+
+#nav-bar toolbarbutton:hover {
+    color: var(--purple-bright) !important;
+
+    background:
+        linear-gradient(var(--purple-12),
+            var(--purple-08)) !important;
+
+    border-color: var(--purple-18) !important;
+}
+
+#nav-bar toolbarbutton[open],
+#nav-bar toolbarbutton:active {
+    color: #ffffff !important;
+
+    background: var(--purple-18) !important;
+
+    border-color: var(--purple-28) !important;
+}
+
+/* ============================================================
+   URL BAR
+   ============================================================ */
+#urlbar-container {
+    min-height: 32px !important;
+
+    padding-block: 2px !important;
+}
+
+#urlbar {
+    min-height: 32px !important;
+}
+
+#urlbar-background {
+    background:
+        linear-gradient(180deg,
+            #2a2a32,
+            #24242c) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10) !important;
+
+    border-radius: 10px !important;
+
+    box-shadow:
+        inset 0 1px rgba(255, 255, 255, 0.025) !important;
+
+    transition:
+        background 120ms ease,
+        border-color 120ms ease,
+        box-shadow 120ms ease !important;
+}
+
+#urlbar:hover #urlbar-background {
+    background:
+        linear-gradient(180deg,
+            #303039,
+            #292932) !important;
+
+    border-color: var(--purple-28) !important;
+}
+
+#urlbar[focused] #urlbar-background,
+#urlbar[open] #urlbar-background {
+    background: var(--bg-input-focus) !important;
+
+    border-color: var(--purple-main) !important;
+
+    box-shadow:
+        0 0 0 1px var(--purple-18),
+        inset 0 1px rgba(255, 255, 255, 0.025) !important;
+}
+
+#urlbar-input {
+    color: #e7e4eb !important;
+
+    font-size: 13px !important;
+}
+
+#urlbar .urlbar-input-container {
+    padding-inline: 9px !important;
+}
+
+/* ============================================================
+   BOOKMARK BAR
+   ============================================================ */
+#PersonalToolbar {
+    min-height: 28px !important;
+    max-height: 28px !important;
+
+    padding: 0 8px !important;
+
+    background: var(--bg-toolbar-2) !important;
+
+    color: var(--text-main) !important;
+
+    border: none !important;
+
+    border-bottom:
+        1px solid rgba(104, 64, 183, .42) !important;
+}
+
+#PersonalToolbar toolbarbutton {
+    min-height: 24px !important;
+
+    margin: 1px !important;
+    padding: 2px 5px !important;
+
+    border: 1px solid transparent !important;
+    border-radius: 5px !important;
+}
+
+#PersonalToolbar toolbarbutton:hover {
+    background: var(--purple-12) !important;
+
+    border-color: var(--purple-18) !important;
+}
+
+/* ============================================================
+   BROWSER CONTENT FRAME
+   ============================================================ */
+#browser,
+#appcontent {
+    background: var(--bg-root) !important;
+}
+
+#browser {
+    border-top: none !important;
+}
+
+/* ============================================================
+   RIGHT SIDEBAR
+   ============================================================ */
+#sidebar-main,
+#sidebar-box,
+#sidebar,
+#sidebar-header {
+    background:
+        linear-gradient(180deg,
+            #121219,
+            #0d0d13) !important;
+
+    color: var(--text-main) !important;
+}
+
+/*
+   Waterfox/Firefox versions differ in which one controls width.
+   Target both.
+*/
+#sidebar-box {
+    min-width: 230px !important;
+
+    border-left:
+        1px solid var(--purple-dark) !important;
+
+    box-shadow:
+        inset 1px 0 rgba(155, 108, 255, .04) !important;
+}
+
+#sidebar-main {
+    border-left:
+        1px solid rgba(104, 64, 183, .42) !important;
+}
+
+
+/* splitter */
+#sidebar-splitter {
+    min-width: 1px !important;
+    width: 1px !important;
+
+    background: var(--purple-dark) !important;
+
+    border: none !important;
+}
+
+/* ============================================================
+   SIDEBAR TOOL BUTTONS
+   ============================================================ */
+#sidebar-main toolbarbutton,
+#sidebar-box toolbarbutton {
+    color: var(--text-secondary) !important;
+
+    background: transparent !important;
+
+    border: 1px solid transparent !important;
+
+    border-radius: 7px !important;
+}
+
+#sidebar-main toolbarbutton:hover,
+#sidebar-box toolbarbutton:hover {
+    color: #ffffff !important;
+
+    background: var(--purple-12) !important;
+
+    border-color: var(--purple-18) !important;
+}
+
+#sidebar-main toolbarbutton[checked="true"],
+#sidebar-main toolbarbutton[aria-pressed="true"] {
+    color: #ffffff !important;
+
+    background:
+        linear-gradient(135deg,
+            rgba(155, 108, 255, .21),
+            rgba(104, 64, 183, .13)) !important;
+
+    border-color: var(--purple-main) !important;
+
+    box-shadow:
+        inset 0 0 12px rgba(155, 108, 255, .05) !important;
+}
+
+/* ============================================================
+   TABS
+   ============================================================ */
+.tabbrowser-tab {
+    min-height: 31px !important;
+
+    margin: 1px 5px !important;
+
+    opacity: .88 !important;
+}
+
+.tab-background {
+    background: transparent !important;
+
+    border:
+        1px solid transparent !important;
+
+    border-radius: 7px !important;
+
+    box-shadow: none !important;
+}
+
+.tabbrowser-tab:hover {
+    opacity: 1 !important;
+}
+
+.tabbrowser-tab:hover .tab-background {
+    background:
+        linear-gradient(90deg,
+            rgba(155, 108, 255, .08),
+            rgba(255, 255, 255, .025)) !important;
+
+    border-color:
+        rgba(155, 108, 255, .15) !important;
+}
+
+/* ACTIVE TAB */
+.tabbrowser-tab[selected] {
+    opacity: 1 !important;
+}
+
+.tabbrowser-tab[selected] .tab-background {
+    background:
+        linear-gradient(90deg,
+            rgba(155, 108, 255, .18) 0%,
+            rgba(104, 64, 183, .10) 55%,
+            rgba(255, 255, 255, .015) 100%) !important;
+
+    border:
+        1px solid rgba(155, 108, 255, .68) !important;
+
+    box-shadow:
+        inset 2px 0 0 var(--purple-bright),
+        0 0 8px rgba(155, 108, 255, .035) !important;
+}
+
+.tab-label {
+    color: #d1ced7 !important;
+
+    font-size: 12px !important;
+}
+
+.tabbrowser-tab[selected] .tab-label {
+    color: #ffffff !important;
+
+    font-weight: 600 !important;
+}
+
+.tab-icon-image {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+/* ============================================================
+   TREE ARROWS
+   ============================================================ */
+.tabbrowser-tab .twisty,
+.tabbrowser-tab .tree-twisty {
+    color: #817b89 !important;
+}
+
+.tabbrowser-tab:hover .twisty,
+.tabbrowser-tab:hover .tree-twisty,
+.tabbrowser-tab[selected] .twisty,
+.tabbrowser-tab[selected] .tree-twisty {
+    color: var(--purple-bright) !important;
+}
+
+/* ============================================================
+   CLOSE BUTTON
+   ============================================================ */
+.tab-close-button {
+    width: 17px !important;
+    height: 17px !important;
+
+    padding: 2px !important;
+
+    opacity: 0 !important;
+
+    border-radius: 5px !important;
+}
+
+.tabbrowser-tab:hover .tab-close-button {
+    opacity: .65 !important;
+}
+
+.tab-close-button:hover {
+    opacity: 1 !important;
+
+    background: rgba(155, 108, 255, .18) !important;
+}
+
+/* ============================================================
+   NEW TAB BUTTON
+   ============================================================ */
+#tabs-newtab-button,
+.tabs-newtab-button {
+    color: #9993a2 !important;
+
+    border: 1px solid transparent !important;
+    border-radius: 6px !important;
+}
+
+#tabs-newtab-button:hover,
+.tabs-newtab-button:hover {
+    color: var(--purple-bright) !important;
+
+    background: var(--purple-12) !important;
+
+    border-color: var(--purple-18) !important;
+}
+
+/* ============================================================
+   BOTTOM BAR
+   ============================================================ */
+
+#browser-bottombox,
+#browser-bottombox toolbar,
+#status-bar,
+#statusbar {
+    background:
+        linear-gradient(180deg,
+            #0c0c11,
+            #08080c) !important;
+
+    color: var(--text-secondary) !important;
+
+    border: none !important;
+
+    border-top:
+        1px solid var(--purple-dark) !important;
+
+    box-shadow: none !important;
+}
+
+#browser-bottombox toolbarbutton,
+#status-bar toolbarbutton,
+#statusbar toolbarbutton {
+    color: #aaa5b2 !important;
+
+    border-radius: 6px !important;
+}
+
+#browser-bottombox toolbarbutton:hover,
+#status-bar toolbarbutton:hover,
+#statusbar toolbarbutton:hover {
+    color: var(--purple-bright) !important;
+
+    background: var(--purple-12) !important;
+}
+
+/* ============================================================
+   PANELS
+   ============================================================ */
+panel,
+panelview,
+.panel-subview-body {
+    --panel-background: #15151c !important;
+    --panel-color: #eeeaf2 !important;
+
+    background: #15151c !important;
+
+    color: #eeeaf2 !important;
+}
+
+/* ============================================================
+   MENUS
+   ============================================================ */
+menupopup {
+    background: #15151c !important;
+
+    color: #eeeaf2 !important;
+
+    border:
+        1px solid rgba(155, 108, 255, .30) !important;
+
+    border-radius: 8px !important;
+}
+
+menupopup>menuitem,
+menupopup>menu {
+    min-height: 27px !important;
+
+    padding-block: 3px !important;
+
+    border-radius: 5px !important;
+}
+
+menuitem:hover,
+menu:hover {
+    background:
+        linear-gradient(90deg,
+            rgba(155, 108, 255, .15),
+            rgba(155, 108, 255, .06)) !important;
+}
+
+/* ============================================================
+   SEPARATORS
+   ============================================================ */
+toolbarseparator,
+menuseparator {
+    border-color:
+        rgba(255, 255, 255, .075) !important;
+}
+
+/* ============================================================
+   FIND BAR
+   ============================================================ */
+findbar {
+    min-height: 32px !important;
+
+    background: #111117 !important;
+
+    color: var(--text-main) !important;
+
+    border-top:
+        1px solid var(--purple-dark) !important;
+}
+
+/* ============================================================
+   WINDOW BUTTONS
+   ============================================================ */
+.titlebar-button {
+    background: transparent !important;
+}
+
+.titlebar-button:hover {
+    background: rgba(255, 255, 255, .065) !important;
+}
+
+.titlebar-close:hover {
+    background: #c42b1c !important;
+}
+
+/* ============================================================
+   CLEANUP
+   ============================================================ */
+#home-button,
+#save-to-pocket-button {
+    display: none !important;
+}
+
+.titlebar-spacer {
+    display: none !important;
+}
+
+/* ============================================================
+   SCROLLBARS
+   ============================================================ */
+* {
+    scrollbar-width: thin !important;
+
+    scrollbar-color:
+        #51495d #101015 !important;
+}
